@@ -181,7 +181,6 @@ MAKE_VARS += \
 	PYTHONSTRICTEXTENSIONBUILD=1
 
 CONFIGURE_ARGS += \
-	--enable-optimizations \
 	--enable-shared \
 	--disable-test-modules \
 	--with-build-python \
@@ -305,7 +304,6 @@ HOST_MAKE_VARS += \
 endif
 
 HOST_CONFIGURE_ARGS += \
-	--enable-optimizations \
 	--disable-test-modules \
 	--with-ensurepip=upgrade \
 	--with-ssl-default-suites=openssl \

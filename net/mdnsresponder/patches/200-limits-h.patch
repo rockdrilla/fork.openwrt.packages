@@ -1,0 +1,13 @@
+diff --git a/mDNSCore/DNSCommon.h b/mDNSCore/DNSCommon.h
+index 5f74f01c..2cf9eaba 100644
+--- a/mDNSCore/DNSCommon.h
++++ b/mDNSCore/DNSCommon.h
+@@ -28,6 +28,8 @@
+ extern "C" {
+ #endif
+ 
++#include <limits.h>
++
+ //*************************************************************************************************************
+ // Macros
+ 
