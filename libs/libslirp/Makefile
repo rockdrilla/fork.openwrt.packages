@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libslirp
-PKG_VERSION:=4.7.0
-PKG_RELEASE:=2
+PKG_VERSION:=4.9.0
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-v$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://gitlab.freedesktop.org/slirp/$(PKG_NAME)/-/archive/v$(PKG_VERSION)
-PKG_HASH:=9398f0ec5a581d4e1cd6856b88ae83927e458d643788c3391a39e61b75db3d3b
+PKG_SOURCE_URL:=https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v$(PKG_VERSION)
+PKG_HASH:=e744a32767668fe80e3cb3bd75d10d501f981e98c26a1f318154a97e99cdac22
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-v$(PKG_VERSION)
 
 PKG_MAINTAINER:=Oskari Rauta <oskari.rauta@gmailcom>

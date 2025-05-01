@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=netavark
-PKG_VERSION:=1.12.2
+PKG_VERSION:=1.15.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/containers/netavark/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=d1e5a7e65b825724fd084b0162084d9b61db8cda1dad26de8a07be1bd6891dbc
+PKG_HASH:=efda776e538ce33050b1f6ce58c5070efeb45653d48fe4d17a47524c8fc17cf1
 
 PKG_MAINTAINER:=Oskari Rauta <oskari.rauta@gmail.com>
 PKG_LICENSE:=Apache-2.0
