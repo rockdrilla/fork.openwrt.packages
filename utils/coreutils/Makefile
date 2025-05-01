@@ -107,6 +107,8 @@ endef
 
 $(foreach a,$(COREUTILS_APPLETS),$(eval $(call GenPlugin,coreutils-$(a),$(a))))
 
+TARGET_CFLAGS += -std=gnu23
+
 CONFIGURE_VARS += \
 	gl_cv_func_mbrtowc_incomplete_state=yes \
 	gl_cv_func_mbrtowc_retval=yes \
@@ -130,8 +132,6 @@ CONFIGURE_ARGS += \
 	--$(if $(CONFIG_USE_MUSL),with,without)-included-regex \
 	--without-selinux \
 	--with-gmp
-
-TARGET_CFLAGS += -std=c17
 
 define Package/coreutils/install
 	true
