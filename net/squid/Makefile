@@ -88,7 +88,7 @@ CONFIGURE_ARGS += \
 	--without-heimdal-krb5 \
 	--without-netfilter-conntrack \
 	--disable-ident-lookups \
-	$(if $(CONFIG_SQUID_auth-basic),--enable,--disable)-auth-basic \
+	$(if $(CONFIG_SQUID_auth-basic),--enable-auth-basic=DB$(comma)fake$(comma)getpwnam$(comma)NCSA$(comma)POP3$(comma)RADIUS$(comma)SMB,--disable-auth-basic) \
 	$(if $(CONFIG_SQUID_auth-digest),--enable,--disable)-auth-digest \
 	$(if $(CONFIG_SQUID_auth-ntlm),--enable,--disable)-auth-ntlm \
 	$(if $(CONFIG_SQUID_auth-negotiate),--enable,--disable)-auth-negotiate \
