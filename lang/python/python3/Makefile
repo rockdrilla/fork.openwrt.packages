@@ -11,12 +11,12 @@ include $(TOPDIR)/rules.mk
 include ../python3-version.mk
 
 PKG_NAME:=python3
-PKG_RELEASE:=2
+PKG_RELEASE:=1
 PKG_VERSION:=$(PYTHON3_VERSION).$(PYTHON3_VERSION_MICRO)
 
 PKG_SOURCE:=Python-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=https://www.python.org/ftp/python/$(PKG_VERSION)
-PKG_HASH:=ed5ef34cda36cfa2f3a340f07cac7e7814f91c7f3c411f6d3562323a866c5c66
+PKG_HASH:=16ede7bb7cdbfa895d11b0642fa0e523f291e6487194d53cf6d3b338c3a17ea2
 
 PKG_MAINTAINER:=Jeffery To <jeffery.to@gmail.com>, Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_LICENSE:=Python-2.0.1 0BSD
@@ -181,7 +181,6 @@ MAKE_VARS += \
 	PYTHONSTRICTEXTENSIONBUILD=1
 
 CONFIGURE_ARGS += \
-	--enable-optimizations \
 	--enable-shared \
 	--disable-test-modules \
 	--with-build-python \
@@ -307,7 +306,6 @@ endif
 
 HOST_CONFIGURE_ARGS += \
 	--with-readline=no \
-	--enable-optimizations \
 	--disable-test-modules \
 	--with-ensurepip=upgrade \
 	--with-ssl-default-suites=openssl \

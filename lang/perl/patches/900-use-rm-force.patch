@@ -120,8 +120,8 @@
  !NO!SUBS!
  
          case "$osname" in
-@@ -1147,8 +1148,8 @@ pod/perl5400delta.pod: pod/perldelta.pod
- 	$(LNS) perldelta.pod pod/perl5400delta.pod
+@@ -1147,8 +1148,8 @@ pod/perl5402delta.pod: pod/perldelta.pod
+ 	$(LNS) perldelta.pod pod/perl5402delta.pod
  
  extra.pods: $(MINIPERL_EXE)
 -	-@test ! -f extra.pods || rm -f `cat extra.pods`

@@ -30,7 +30,7 @@ define Package/less
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=Pager program similar to more
-  URL:=http://www.greenwoodsoftware.com/less/
+  URL:=https://www.greenwoodsoftware.com/less/
   ALTERNATIVES:=200:/usr/bin/less:/usr/libexec/less-gnu
   DEPENDS:=+libncursesw
   PROVIDES:=less-wide

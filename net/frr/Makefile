@@ -7,12 +7,12 @@
 
 include $(TOPDIR)/rules.mk
 PKG_NAME:=frr
-PKG_VERSION:=10.4.1
+PKG_VERSION:=10.5.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/FRRouting/frr/tar.gz/$(PKG_NAME)-$(PKG_VERSION)?
-PKG_HASH:=8e4003eaba168626c5ea7a6735f2c85c87b04214e6f8c8f2715b21f8ae40970b
+PKG_HASH:=a84b973e713349dca09e2009f33dc499564f2e9faba01c0d3cba9204802b0cd5
 
 
 PKG_MAINTAINER:=Lucian Cristian <lucian.cristian@gmail.com>
@@ -79,7 +79,7 @@ endef
 
 define Package/frr
   $(call Package/frr/Default)
-  DEPENDS:=+librt +libatomic +libcap +libncurses +libjson-c +libreadline \
+  DEPENDS:= +USE_GLIBC:libcrypt-compat +librt +libatomic +libcap +libcares +libncurses +libjson-c +libreadline \
     +libyang +libprotobuf-c +FRR_OPENSSL:libopenssl +FRR_SNMP:libnetsnmp +more
   TITLE:=The FRRouting (FRR) Software Routing Suite
   MENU:=1
@@ -138,10 +138,7 @@ endif
 
     define Package/frr-$(1)/install
 	$(INSTALL_DIR) $$(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/$(1) $$(1)/usr/sbin/; \
-	if [ "$(1)" == "nhrpd" ]; then \
-	$(INSTALL_DIR) $$(1)/usr/lib; \
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libfrrcares.so* $$(1)/usr/lib/; fi
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/$(1) $$(1)/usr/sbin/
     endef
 
     $$(eval $$(call BuildPackage,frr-$(1)))
@@ -202,7 +199,10 @@ define Package/frr/install
 	$(INSTALL_CONF) ./files/vtysh.conf $(1)/etc/frr/
 	$(INSTALL_DIR) $(1)/usr/lib $(1)/etc/frr
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libfrr.so* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libfrr_pb.so* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libfrrcares.so* $(1)/usr/lib/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libmgmt_be_nb.so* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libmlag_pb.so* $(1)/usr/lib/
 	$(if $(CONFIG_FRR_SNMP),$(CP) $(PKG_INSTALL_DIR)/usr/lib/libfrrsnmp.so* $(1)/usr/lib/,)
 	$(INSTALL_CONF) ./files/{frr.conf,daemons} $(1)/etc/frr/
 endef
@@ -238,7 +238,7 @@ $(eval $(call BuildDaemon,eigrpd,))
 $(eval $(call BuildDaemon,fabricd,))
 $(eval $(call BuildDaemon,isisd,))
 $(eval $(call BuildDaemon,ldpd,))
-$(eval $(call BuildDaemon,nhrpd,+libcares))
+$(eval $(call BuildDaemon,nhrpd,))
 $(eval $(call BuildDaemon,ospfd,))
 $(eval $(call BuildDaemon,ospf6d,@IPV6))
 $(eval $(call BuildDaemon,pathd,))
