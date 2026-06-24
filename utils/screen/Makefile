@@ -40,6 +40,7 @@ define Package/screen/description
 endef
 
 CONFIGURE_ARGS += \
+	--disable-pam \
 	--enable-colors256 \
 	--disable-pam \
 	--with-sys-screenrc=/etc/screenrc \

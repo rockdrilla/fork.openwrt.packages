@@ -15,8 +15,8 @@ PKG_CPE_ID:=cpe:/a:mozilla:netscape_portable_runtime
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:= \
-    https://download.cdn.mozilla.net/pub/$(PKG_NAME)/releases/v$(PKG_VERSION)/src/ \
-    https://archive.mozilla.org/pub/$(PKG_NAME)/releases/v$(PKG_VERSION)/src/
+    https://download.cdn.mozilla.net/pub/nspr/releases/v$(PKG_VERSION)/src/ \
+    https://archive.mozilla.org/pub/nspr/releases/v$(PKG_VERSION)/src/
 PKG_HASH:=bbd02ee87a55676063a63e5bc819e0227de2666b47307b2a0134414cdf42368e
 
 PKG_BUILD_PARALLEL:=1

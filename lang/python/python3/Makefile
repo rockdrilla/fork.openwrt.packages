@@ -16,7 +16,7 @@ PKG_VERSION:=$(PYTHON3_VERSION).$(PYTHON3_VERSION_MICRO)
 
 PKG_SOURCE:=Python-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=https://www.python.org/ftp/python/$(PKG_VERSION)
-PKG_HASH:=7e32597b99e5d9a39abed35de4693fa169df3e5850d4c334337ffd6a19a36db6
+PKG_HASH:=143b1dddefaec3bd2e21e3b839b34a2b7fb9842272883c576420d605e9f30c63
 
 PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_LICENSE:=Python-2.0.1 0BSD
@@ -181,7 +181,6 @@ MAKE_VARS += \
 	PYTHONSTRICTEXTENSIONBUILD=1
 
 CONFIGURE_ARGS += \
-	--enable-optimizations \
 	--enable-shared \
 	--disable-test-modules \
 	--with-build-python \
@@ -317,7 +316,6 @@ endif
 
 HOST_CONFIGURE_ARGS += \
 	--with-readline=no \
-	--enable-optimizations \
 	--disable-test-modules \
 	--with-ensurepip=upgrade \
 	--with-ssl-default-suites=openssl \

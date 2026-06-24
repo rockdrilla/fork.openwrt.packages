@@ -12,8 +12,8 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:= \
-    https://download.cdn.mozilla.net/pub/security/$(PKG_NAME)/releases/NSS_$(subst .,_,$(PKG_VERSION))_RTM/src \
-    https://archive.mozilla.org/pub/security/$(PKG_NAME)/releases/NSS_$(subst .,_,$(PKG_VERSION))_RTM/src
+    https://download.cdn.mozilla.net/pub/security/nss/releases/NSS_$(subst .,_,$(PKG_VERSION))_RTM/src \
+    https://archive.mozilla.org/pub/security/nss/releases/NSS_$(subst .,_,$(PKG_VERSION))_RTM/src
 PKG_HASH:=1ad541f10da7c58dec01f540ecc44d28cbbc033f741a57473de5a0893d91606d
 
 PKG_MAINTAINER:=Lucian Cristian <lucian.cristian@gmail.com>

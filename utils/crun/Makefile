@@ -38,7 +38,7 @@ define Download/libocispec
   PROTO:=git
   URL:=https://github.com/containers/libocispec.git
   SOURCE_VERSION:=$(LIBOCISPEC_COMMIT)
-  MIRROR_HASH:=ac132910952d2d5c6bf3c8b891cced10d1c6113d50c78779a6b8d21851dc908a
+  MIRROR_HASH:=4dd894900a7ae9695178e020106a50a72d4f094ad958e90ee16843aed03c40bb
   FILE:=libocispec-$(LIBOCISPEC_COMMIT).tar.xz
   SUBDIR:=libocispec
 endef
